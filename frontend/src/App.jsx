@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Home, Layout, PortfolioDetails } from "./utils/Router";
+import { Contact, Home, Layout, PortfolioDetails, Resume, Service, Skill, Testimonial } from "./utils/Router";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
 
       {!showLoader && (
         <>
-          <BrowserRouter>
+          <BrowserRouter basename="/portfolio-master/"> 
             <Routes>
               <Route
                 path="/"
@@ -52,6 +52,46 @@ function App() {
                 element={
                   <Layout>
                     <PortfolioDetails />
+                  </Layout>
+                }
+              />
+              <Route
+                path="/service"
+                element={
+                  <Layout>
+                    <Service/>
+                  </Layout>
+                }
+              />
+              <Route
+                path="/resume"
+                element={
+                  <Layout>
+                    <Resume/>
+                  </Layout>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <Layout>
+                    <Contact/>
+                  </Layout>
+                }
+              />
+              <Route
+                path="/testimonials"
+                element={
+                  <Layout>
+                    <Testimonial/>
+                  </Layout>
+                }
+              />
+              <Route
+                path="/skill"
+                element={
+                  <Layout>
+                    <Skill/>
                   </Layout>
                 }
               />
